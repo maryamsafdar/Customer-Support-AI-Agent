@@ -1,4 +1,16 @@
+# fastapi
+# uvicorn[standard]
+# sqlalchemy
+# pydantic
+# transformers
+# torch
+# python-dotenv
+# streamlit
+# requests
 fastapi
 uvicorn
 sqlalchemy
-pydantic
+transformers
+torch
+streamlit
+rapidfuzz
