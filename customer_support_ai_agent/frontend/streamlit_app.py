@@ -30,20 +30,76 @@ def source_badge(source: str) -> str:
     return f"<span class='badge' style='background:{color}'>{label}</span>"
 
 # ── Styles ────────────────────────────────────────────────────────────────────
+# ── Styles ────────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-.badge {
-  display:inline-block; padding:2px 8px; border-radius:999px;
-  font-size:12px; font-weight:600; color:#fff; vertical-align:middle;
+/* Global light theme background */
+body, .stApp {
+  background-color: #f9fafb;
+  color: #111827;
+  font-family: "Inter", sans-serif;
 }
-.msg {padding:0.8rem 1rem;border-radius:12px;margin-bottom:0.4rem}
-.user {background:#eef3ff}
-.bot  {background:#f5f5f5}
-.small {font-size:0.8rem;color:#666}
-.meta {display:flex; gap:.5rem; align-items:center; margin-top:.25rem;}
-.hr {height:1px;background:#e5e7eb;margin:.5rem 0;}
+
+/* Chat bubbles */
+.msg {
+  padding:0.8rem 1rem;
+  border-radius:12px;
+  margin-bottom:0.4rem;
+}
+.user {
+  background:#e6f7ec;  /* soft green tint */
+  border:1px solid #bbf7d0; /* light green border */
+}
+.bot {
+  background:#f5f5f5;
+  border:1px solid #e5e7eb;
+}
+
+/* Badges */
+.badge {
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+  color:#fff;
+  vertical-align:middle;
+}
+.badge[data-source="faq"] {
+  background:#16a34a; /* green */
+}
+.badge[data-source="ai"] {
+  background:#3b82f6; /* blue */
+}
+.badge[data-source="ticket"] {
+  background:#dc2626; /* red */
+}
+
+/* Metadata */
+.small {
+  font-size:0.8rem;
+  color:#4b5563;
+}
+.meta {
+  display:flex;
+  gap:.5rem;
+  align-items:center;
+  margin-top:.25rem;
+}
+.hr {
+  height:1px;
+  background:#d1d5db;
+  margin:.5rem 0;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+  background-color:#ffffff;
+  border-right:2px solid #bbf7d0; /* green accent */
+}
 </style>
 """, unsafe_allow_html=True)
+
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:

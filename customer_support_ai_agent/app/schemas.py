@@ -31,7 +31,7 @@ class TicketCreate(BaseModel):
     name: Optional[str] = None
 
 class TicketOut(BaseModel):
-    id: int
+    id: int 
     question: str
     name: str | None = None
     email: str | None = None
