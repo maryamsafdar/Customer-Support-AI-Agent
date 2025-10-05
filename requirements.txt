@@ -1,8 +1,8 @@
-python-dotenv
-fastapi
-uvicorn
-sqlalchemy
-transformers
-torch
-streamlit
-rapidfuzz
+python-dotenv==1.0.1
+fastapi==0.118.0
+uvicorn[standard]==0.37.0
+SQLAlchemy==2.0.43
+scikit-learn==1.5.2
+streamlit==1.50.0
+rapidfuzz==3.9.6
+requests==2.32.3
