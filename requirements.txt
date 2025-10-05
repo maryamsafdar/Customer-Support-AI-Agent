@@ -7,11 +7,11 @@ rapidfuzz==3.9.6
 requests==2.32.3
 scikit-learn==1.5.2
 
-# HF stack (compatible set)
+# Hugging Face stack (matches transformers 4.44.x)
 transformers==4.44.2
 tokenizers==0.19.1
 safetensors==0.4.3
 
-# PyTorch CPU wheels ONLY (no CUDA downloads)
+# PyTorch CPU wheels only (no CUDA)
 --extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.8.0+cpu
+torch==2.5.1+cpu
