@@ -14,4 +14,4 @@ safetensors==0.4.3
 
 # PyTorch CPU wheels ONLY (no CUDA downloads)
 --extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.4.0+cpu
+torch==2.8.0+cpu

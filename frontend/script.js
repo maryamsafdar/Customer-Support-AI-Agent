@@ -1,5 +1,5 @@
 
-const API = localStorage.getItem("BASE_URL") || "http://localhost:8000";
+const API = localStorage.getItem("BASE_URL") || "https://web-production-b381e.up.railway.app/";
 document.getElementById("ask").addEventListener("click", async () => {
   const q = document.getElementById("q").value.trim();
   if (!q) return;

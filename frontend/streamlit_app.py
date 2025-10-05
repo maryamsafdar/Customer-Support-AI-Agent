@@ -7,7 +7,7 @@ st.set_page_config(page_title="Support AI Agent", page_icon="💬", layout="wide
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 def get_base_url():
-    return st.session_state.get("base_url") or os.getenv("BASE_URL", "http://localhost:8000")
+    return st.session_state.get("base_url") or os.getenv("BASE_URL", "https://web-production-b381e.up.railway.app/")
 
 def api_post(path: str, json: dict):
     url = f"{get_base_url()}{path}"
