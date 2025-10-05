@@ -104,7 +104,7 @@ section[data-testid="stSidebar"] {
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.header("⚙️ Settings")
-    base_url = st.text_input("API Base URL", value=os.getenv("BASE_URL", "http://localhost:8000"))
+    base_url = st.text_input("API Base URL", value=os.getenv("BASE_URL", "https://web-production-b381e.up.railway.app/"))
     st.session_state["base_url"] = base_url
 
     st.markdown("---")
