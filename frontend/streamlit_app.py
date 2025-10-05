@@ -29,73 +29,164 @@ def source_badge(source: str) -> str:
         color = "#ef4444"  # red
     return f"<span class='badge' style='background:{color}'>{label}</span>"
 
+
 # ── Styles ────────────────────────────────────────────────────────────────────
-# ── Styles ────────────────────────────────────────────────────────────────────
+# st.markdown("""
+# <style>
+# /* Global light theme background */
+# body, .stApp {
+#   background-color: #f9fafb;
+#   color: #111827;
+#   font-family: "Inter", sans-serif;
+# }
+
+# /* Chat bubbles */
+# .msg {
+#   padding:0.8rem 1rem;
+#   border-radius:12px;
+#   margin-bottom:0.4rem;
+# }
+# .user {
+#   background:#e6f7ec;  /* soft green tint */
+#   border:1px solid #bbf7d0; /* light green border */
+# }
+# .bot {
+#   background:#f5f5f5;
+#   border:1px solid #e5e7eb;
+# }
+
+# /* Badges */
+# .badge {
+#   display:inline-block;
+#   padding:2px 8px;
+#   border-radius:999px;
+#   font-size:12px;
+#   font-weight:600;
+#   color:#fff;
+#   vertical-align:middle;
+# }
+# .badge[data-source="faq"] {
+#   background:#16a34a; /* green */
+# }
+# .badge[data-source="ai"] {
+#   background:#3b82f6; /* blue */
+# }
+# .badge[data-source="ticket"] {
+#   background:#dc2626; /* red */
+# }
+
+# /* Metadata */
+# .small {
+#   font-size:0.8rem;
+#   color:#4b5563;
+# }
+# .meta {
+#   display:flex;
+#   gap:.5rem;
+#   align-items:center;
+#   margin-top:.25rem;
+# }
+# .hr {
+#   height:1px;
+#   background:#d1d5db;
+#   margin:.5rem 0;
+# }
+
+# /* Sidebar */
+# section[data-testid="stSidebar"] {
+#   background-color:#ffffff;
+#   border-right:2px solid #bbf7d0; /* green accent */
+# }
+# </style>
+# """, unsafe_allow_html=True)
 st.markdown("""
 <style>
-/* Global light theme background */
+/* 🌞 Light theme (default) */
 body, .stApp {
   background-color: #f9fafb;
   color: #111827;
   font-family: "Inter", sans-serif;
 }
 
-/* Chat bubbles */
+/* 🌚 Dark theme */
+@media (prefers-color-scheme: dark) {
+  body, .stApp {
+    background-color: #111827 !important;
+    color: #f9fafb !important;
+  }
+  .user {
+    background: #064e3b !important;  /* deep green */
+    border: 1px solid #10b981 !important;
+    color: #d1fae5 !important;       /* light green text */
+  }
+  .bot {
+    background: #1f2937 !important;  /* dark gray bubble */
+    border: 1px solid #374151 !important;
+    color: #f9fafb !important;
+  }
+  section[data-testid="stSidebar"] {
+    background-color: #1e1e1e !important;
+    border-right: 2px solid #10b981 !important;
+  }
+  .small { color: #d1d5db !important; }
+}
+
+/* Chat bubbles (shared) */
 .msg {
-  padding:0.8rem 1rem;
-  border-radius:12px;
-  margin-bottom:0.4rem;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  margin-bottom: 0.4rem;
 }
 .user {
-  background:#e6f7ec;  /* soft green tint */
-  border:1px solid #bbf7d0; /* light green border */
+  background: #e6f7ec;
+  border: 1px solid #bbf7d0;
+  color: #065f46;
 }
 .bot {
-  background:#f5f5f5;
-  border:1px solid #e5e7eb;
+  background: #f5f5f5;
+  border: 1px solid #e5e7eb;
 }
 
 /* Badges */
 .badge {
-  display:inline-block;
-  padding:2px 8px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:600;
-  color:#fff;
-  vertical-align:middle;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  vertical-align: middle;
 }
-.badge[data-source="faq"] {
-  background:#16a34a; /* green */
-}
-.badge[data-source="ai"] {
-  background:#3b82f6; /* blue */
-}
-.badge[data-source="ticket"] {
-  background:#dc2626; /* red */
-}
+.badge[data-source="faq"] { background: #16a34a; }
+.badge[data-source="ai"] { background: #3b82f6; }
+.badge[data-source="ticket"] { background: #dc2626; }
 
 /* Metadata */
 .small {
-  font-size:0.8rem;
-  color:#4b5563;
+  font-size: 0.8rem;
+  color: #4b5563;
 }
 .meta {
-  display:flex;
-  gap:.5rem;
-  align-items:center;
-  margin-top:.25rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.25rem;
 }
 .hr {
-  height:1px;
-  background:#d1d5db;
-  margin:.5rem 0;
+  height: 1px;
+  background: #d1d5db;
+  margin: 0.5rem 0;
 }
 
 /* Sidebar */
 section[data-testid="stSidebar"] {
-  background-color:#ffffff;
-  border-right:2px solid #bbf7d0; /* green accent */
+  background-color: #ffffff;
+  border-right: 2px solid #bbf7d0;
+}
+
+/* Buttons and text inputs */
+.stTextInput, .stTextArea, .stButton > button {
+  border-radius: 8px;
 }
 </style>
 """, unsafe_allow_html=True)
