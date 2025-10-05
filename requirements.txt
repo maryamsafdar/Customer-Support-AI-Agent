@@ -2,7 +2,16 @@ python-dotenv==1.0.1
 fastapi==0.118.0
 uvicorn[standard]==0.37.0
 SQLAlchemy==2.0.43
-scikit-learn==1.5.2
 streamlit==1.50.0
 rapidfuzz==3.9.6
 requests==2.32.3
+scikit-learn==1.5.2
+
+# HF stack (lightweight & compatible)
+transformers==4.44.2
+tokenizers==0.15.2
+safetensors==0.4.3
+
+# PyTorch CPU wheels (NO CUDA) — NOTE: keep this line BEFORE torch
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.4.0+cpu
